@@ -425,7 +425,7 @@ let g:jsx_ext_required = 0
 
 " luochen1990/rainbow
 " -----------------
-if expand('%:e') ==# 'clj'
+if expand("%:e") ==# 'clj' || expand("%:e") ==# 'scm'
   let g:rainbow_active = 1
 endif
 
@@ -594,12 +594,13 @@ Plug 'shmup/vim-sql-syntax'
 " Arduino
 Plug 'stevearc/vim-arduino'
 
-" Clojure
+" Lispy things (Clojure, Racket, etc)
 Plug 'guns/vim-clojure-static'
 Plug 'luochen1990/rainbow'
 " Remember to have a `lein repl` open in order for this to connect!
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
+Plug 'wlangstroth/vim-racket'
 
 " Plumbing that makes everything nicer
 " Fuzzy-finder
