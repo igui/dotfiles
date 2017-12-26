@@ -425,7 +425,6 @@ let g:jsx_ext_required = 0
 
 " luochen1990/rainbow
 " -------------------
-let g:rainbow_active = 1
 let g:rainbow_conf = {
   \ 'ctermfgs': [
   \   'brown',
