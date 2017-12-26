@@ -424,11 +424,8 @@ let ruby_no_expensive = 1
 let g:jsx_ext_required = 0
 
 " luochen1990/rainbow
-" -----------------
-if expand("%:e") ==# 'clj' || expand("%:e") ==# 'scm'
-  let g:rainbow_active = 1
-endif
-
+" -------------------
+let g:rainbow_active = 1
 let g:rainbow_conf = {
   \ 'ctermfgs': [
   \   'brown',
