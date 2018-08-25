@@ -590,6 +590,7 @@ Plug 'chr4/nginx.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'slim-template/vim-slim'
 Plug 'shmup/vim-sql-syntax'
+Plug 'dag/vim-fish'
 
 " Arduino
 Plug 'stevearc/vim-arduino'
