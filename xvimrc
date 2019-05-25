@@ -1,0 +1,18 @@
+set ignorecase
+set smartcase
+set relativenumber
+set number
+
+" Default to global substitutions on lines
+set gdefault
+
+nnoremap gcc :xcmenucmd Comment Selection<CR>
+vnoremap gc :xcmenucmd Comment Selection<CR>
+
+" Fuzzy-find
+nnoremap <space>t :xccmd openQuickly<CR>
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
