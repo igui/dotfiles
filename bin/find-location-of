@@ -1,17 +1,17 @@
 #!/usr/bin/env zsh
 
 # Finds a script file, shell alias, or shell function and prints its
-# location, including a Vim-readable line number.
-#
-# You can then do `vim "$(find-location-of THING)"`.
+# location, including a the line number. The line number is always included for
+# consistency, even if it's just "1" (i.e. start at the top, just like the
+# default).
 #
 # Usage:
 #
 #     $ find-location-of myalias
-#     ~/.zshrc +530
+#     ~/.zshrc 530
 #
 #     $ find-location-of git-merge-to
-#     ~/.bin/git-merge-to
+#     ~/.bin/git-merge-to 1
 
 source ~/.zshrc
 
@@ -70,7 +70,7 @@ _edit_based_on_pattern(){
   if _grep_for_definition -q "$pattern"; then
     file=$(_definition_field_for_pattern 1 "$pattern")
     line=$(_definition_field_for_pattern 2 "$pattern")
-    echo "$(_follow_symlink "$file")" "+$line"
+    echo "$(_follow_symlink "$file")" "$line"
   else
     _handle_unknown_command "$command_name"
   fi

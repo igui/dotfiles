@@ -111,6 +111,20 @@ nnoremap <C-W><C-]> :stag <C-R>=expand('<cword>')<CR><CR>
 " -----------------
 command! -nargs=+ -complete=file -bar Grep silent! grep! <args> | copen 10 | redraw!
 command! -nargs=+ -complete=file -bar GrepWithoutTests silent! grep! --glob '!spec/' <args> | copen 10 | redraw!
+command! -nargs=1 -bar Viw silent! grep! <args> | copen 10 | redraw!
+
+function! FindLocationOf(needle)
+  let l:path_and_line_number = split(system('find-location-of ' . a:needle))
+  if v:shell_error == 0
+    let l:path = path_and_line_number[0]
+    let l:line_number = path_and_line_number[1]
+    call MaybeTabedit(x)
+    execute l:line_number
+  else
+    echom 'Something went wrong'
+  endif
+endfunction
+command! -nargs=1 -bar Viw silent! call FindLocationOf <q-args>
 
 function! CharacterUnderCursor()
   return nr2char(strgetchar(getline('.')[col('.') - 1:], 0))
